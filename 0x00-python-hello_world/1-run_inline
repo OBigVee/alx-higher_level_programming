@@ -1,2 +1,2 @@
 #!/bin/bash
-print -c $PYCODE
+print $PYCODE
