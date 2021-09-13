@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
 
-def print_list_integer(mylist = []):
-    for num in range(len(mylist)):
-        print("{:d}".format(num))
+def print_list_integer(my_list = []):
+    for num in range(len(my_list)):
+        print("{:d}".format(my_list[num]))
