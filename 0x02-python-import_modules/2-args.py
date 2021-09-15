@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import sys
-if len(sys.argv) == 0:
+if len(sys.argv) == None:
     print("{:d} arguments.".format(len(sys.argv)))
 else:
     print("{:d} arguments:".format(len(sys.argv)))
