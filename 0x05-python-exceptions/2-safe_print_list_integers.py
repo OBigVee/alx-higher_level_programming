@@ -1,15 +1,15 @@
 #!/usr/bin/python3
-def safe_print_list_intergers(my_list=[], x=0):
+def safe_print_list_integers(my_list=[], x=0):
     count = 0
     for element in range(0,x):
         try:
             print("{:d}".format(my_list[element]), end="")
-            count = 1
+            count += 1
+            
         except TypeError:
-            break
+            continue
         except ValueError:
-            pass
-        except IndexError:
-            break
+            continue
+       
     print()
     return count
