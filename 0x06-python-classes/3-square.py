@@ -1,4 +1,3 @@
-22 lines (17 sloc)  549 Bytes
 #!/usr/bin/python3
 """ Define a square class """
 
