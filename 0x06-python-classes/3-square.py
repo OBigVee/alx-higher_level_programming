@@ -1,20 +1,22 @@
+22 lines (17 sloc)  549 Bytes
 #!/usr/bin/python3
+""" Define a square class """
+
+
 class Square:
-    def __init__(self, size=0):
-        self.size = size
+    """ Represents a Square """
 
-    @property
-    def size(self):
-        return self.__size
-
-    @size.setter
-    def size(self, size):
-        if type(size) != int:
-            raise TypeError("size must be integer")
+    def __init__(self, size):
+        """ Initialises new Square
+        Args:
+            size (int): size of side of the square
+        """
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
         elif size < 0:
             raise ValueError("size must be >= 0")
-        else:
-            self.__size = size
+        self.__size = size
 
     def area(self):
-        return self.__size * self.__size
+        """ returns current area of the square """
+        return (self.__size * self.__size)
