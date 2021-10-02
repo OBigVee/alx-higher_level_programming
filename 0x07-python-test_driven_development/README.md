@@ -28,7 +28,9 @@ At the end of this project, you are expected to be able to [explain to anyone](h
 * How to write documentation for each module and function
 * What are the basic option flags to create tests
 * How to find edge cases  
-* 
+
+
+
 ### Requirements
 #### **Python Scripts**
 * Allowed editors: `vi`, `vim`, `emacs`
