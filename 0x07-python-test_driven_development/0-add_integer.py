@@ -3,12 +3,17 @@
 
 
 def add_integer(a, b=98):
-    """function takes in two parameters:
+    """function takes in two parameters
+    
     Args:
             a (int): first value
             b (int): second value with a defualt value 98
+    Returns :
+            sum of a and b
         """
-    if not isinstance(a, (int,float)):
+    
+   
+    if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
     if not isinstance(b, (int, float)) :
         raise TypeError("b must be an integer")
