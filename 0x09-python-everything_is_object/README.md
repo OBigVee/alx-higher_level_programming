@@ -51,14 +51,14 @@ At the end of this project, you are expected to be able to [explain to anyone](h
 
 ### General
 * Why Python programming is awesome
-* What is an object
-* What is the difference between a class and an object or instance
-* What is the difference between immutable object and mutable object
-* What is a reference
-* What is an assignment
-* What is an alias
-* How to know if two variables are identical
-* How to know if two variables are linked to the same object
+* What is an object **:** _object is an instance of a class with  id, state and identity and  most time can be physical(tangible or intangible)_ 
+* What is the difference between a class and an object or instance? **:** _Class is an abstract template that describes what an object looks like_
+* What is the difference between immutable object and mutable object **:** _Values of Mutable objects can be change without changing the identity_ 
+* What is a reference **:** _Points to the object of a class thereby allowing it to have access to the value of the object._
+* What is an assignment **:** _assignment helps to set value of an object to a label called variable_
+* What is an alias **:** _alias means copying the reference of an object_
+* How to know if two variables are identical **:** _check the type and value_
+* How to know if two variables are linked to the same object **:** _check the id with id()_
 * How to display the variable identifier (which is the memory address in the CPython implementation)
 * What is mutable and immutable
 * What are the built-in mutable types
