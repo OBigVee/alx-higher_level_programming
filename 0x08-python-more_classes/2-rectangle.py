@@ -4,6 +4,7 @@
 
 class Rectangle:
     """ Rectangle class with attributes"""
+    
     def __init__(self, width=0, height=0):
         """ initialize new rectangle
         Args: 
@@ -12,6 +13,7 @@ class Rectangle:
         """
         self.width = width
         self.height = height
+        
     @property
     def width(self):
         """width accesser/ getter. gets the current value of the width """
@@ -21,7 +23,6 @@ class Rectangle:
     def height(self):
         """ height acesser/getter. gets the current value of the height  """
         return self.__height
-      
       
     @width.setter  
     def width(self,value):
@@ -42,8 +43,7 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         else:
             self.__height = value
-            
-            
+                    
     def area(self):
         """ return area of the rectangle """
         return self.__width * self.__height
