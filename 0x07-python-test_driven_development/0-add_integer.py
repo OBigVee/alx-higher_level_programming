@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" add_integer function sum two int values together """
+"""add_integer function sum two int values together"""
 
 
 def add_integer(a, b=98):
