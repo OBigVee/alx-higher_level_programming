@@ -1,13 +1,12 @@
 #!/usr/bin/python3
-"""defines a class MyList that inherits from list"""
+""" Documentation for simple MyList class that inherits from the list class"""
 
 
-Class MyList(list):
-    """MyList inherit list object"""
-    
-#     def __init__(self,):
-#         super().__init__()
-        
+class MyList(list):
+
+    """MyList class that inherits from the list class"""
+
     def print_sorted(self):
-        """ sort and print list in ascending order"""
+        """Function sorts the current instance of MyList"""
+
         print(sorted(self))
