@@ -6,4 +6,4 @@
 
 def is_kind_of_class_(obj, a_class):
     """returns True if obj is an isinstance of a_class"""
-    return(True if isinstance(obj,a_class) else False)
+    return(True if isinstance(obj, a_class) else False)
