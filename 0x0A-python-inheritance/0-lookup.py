@@ -9,4 +9,4 @@ def lookup(obj):
           obj(object):
       Returns: list of available attributes
       """
-    return [attr for attr in dir(obj)]
+    return dir(obj)
