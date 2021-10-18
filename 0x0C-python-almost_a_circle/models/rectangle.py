@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ Rectangle class inherits from Base class"""
-from base import Base
+from models.base import Base
 
 class Rectangle(Base):
     """
@@ -95,7 +95,16 @@ class Rectangle(Base):
         return self.__height * self.__width
     
     def display(self):
-        [print("#"*self.__width) for x in range(self.__height)]
+        for coor_y in range(self.__y):
+            print()
+        for h_cm in range(self.__height):
+            for coor_x in range(self.__x):
+                print(" ", end="")
+            for w_cm in range(self.__width):
+                print("#", end="")
+            print()
+
+        #[print("#"*self.__width) for x in range(self.__height)]
     
     def __str__(self):
         return ("[{}] ({}) {}/{} - {}/{}").format(self.__class__.__name__,
