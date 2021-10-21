@@ -1,18 +1,19 @@
 #!/usr/bin/python3
 """ Rectangle class inherits from Base class"""
-from models.base import Base
+from base import Base
+
 
 class Rectangle(Base):
     """
     class information
     """
+
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
         self.width = width
         self.height = height
-        self.x  = x
+        self.x = x
         self.y = y
-    
 
     @property
     def width(self):
@@ -22,17 +23,17 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
 
-        """ validate the the value for rectangle 
+        """validate the the value for rectangle
                 height is positive interger
         Args:
             value(Int): rectangle width
         """
 
         if type(value) != int:
-            raise TypeError ("width must be an integer")
+            raise TypeError("width must be an integer")
         elif value <= 0:
             raise ValueError("width must be > 0")
-        
+
         self.__width = value
 
     @property
@@ -47,19 +48,19 @@ class Rectangle(Base):
             value(Int): rectangle height
         """
         if type(value) != int:
-            raise TypeError ("height must be an integer")
+            raise TypeError("height must be an integer")
         elif value <= 0:
             raise ValueError("height must be > 0")
-        
+
         self.__height = value
-    
+
     @property
     def x(self):
         return self.__x
-    
+
     @x.setter
     def x(self, value):
-        """ 
+        """
         validate the the value for x is non negative interger
         Args:
             value(Int): x value
@@ -68,14 +69,14 @@ class Rectangle(Base):
             raise TypeError("x must be an integer")
         elif value < 0:
             raise ValueError("x must be >= 0")
-    
+
         self.__x = value
-    
+
     @property
     def y(self):
         """ """
         return self.__y
-    
+
     @y.setter
     def y(self, value):
         """
@@ -83,17 +84,17 @@ class Rectangle(Base):
         Args:
             value(Int): y value
         """
-       
+
         if type(value) != int:
             raise TypeError("y must be an integer")
-        elif value <0:
+        elif value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-        
+
     def area(self):
-        """ return the area rectangle"""
+        """return the area rectangle"""
         return self.__height * self.__width
-    
+
     def display(self):
         for coor_y in range(self.__y):
             print()
@@ -104,16 +105,19 @@ class Rectangle(Base):
                 print("#", end="")
             print()
 
-        #[print("#"*self.__width) for x in range(self.__height)]
-    
+        # [print("#"*self.__width) for x in range(self.__height)]
+
     def __str__(self):
-        return ("[{}] ({}) {}/{} - {}/{}").format(self.__class__.__name__,
-                                                       self.id,
-                                                       self.__x,
-                                                       self.__y,
-                                                       self.__width,
-                                                       self.__height)
-    def update(self, *args):
+        return ("[{}] ({}) {}/{} - {}/{}").format(
+            self.__class__.__name__,
+            self.id,
+            self.__x,
+            self.__y,
+            self.__width,
+            self.__height,
+        )
+
+    def update(self, *args, **kwargs):
         """update - assign the arguments to each attribute
         @args: list of arguments"""
         for i in range(len(args)):
@@ -127,4 +131,3 @@ class Rectangle(Base):
                 self.__x = args[3]
             elif i == 4:
                 self.__y = args[4]
- 
