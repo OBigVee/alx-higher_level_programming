@@ -2,7 +2,7 @@
 """ Square class inherits from the Rectangle class"""
 
 
-from models.rectangle import Rectangle
+from rectangle import Rectangle
 
 
 class Square(Rectangle):
@@ -83,7 +83,6 @@ class Square(Rectangle):
         return self.__height * self.__width
 
     def display(self):
-
         for coor_y in range(self.__y):
             print()
         for height_cm in range(self.__height):
@@ -101,4 +100,24 @@ class Square(Rectangle):
             self.__x,
             self.__y,
             self.__size,
-            )
+        )
+    
+    def update(self, *args, **kwargs):
+        """ assigns attributes """
+        if args: # not empty
+            for arg in range(len(args)):
+                
+                if arg == 0:
+                    self.id = args[0]
+                elif arg == 1:
+                    self.__size = args[1]
+                # elif arg == 2:
+                #     self.__height = args[2]
+                elif arg == 2:
+                    self.__x = args[2]
+                elif arg == 3:
+                    self.__y = args[3]
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+        return super().update(*args, **kwargs)
