@@ -2,7 +2,7 @@
 """ Square class inherits from the Rectangle class"""
 
 
-from rectangle import Rectangle
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
@@ -113,3 +113,13 @@ class Square(Rectangle):
             for key, value in kwargs.items():
                 setattr(self, key, value)
         return super().update(*args, **kwargs)
+
+    def to_dictionary(self):
+        """function returns the dictionary representation of Rectangle"""
+
+        return {
+            "id": self.id,
+            "size": self.__size,
+            "x": self.__x,
+            "y": self.__y,
+        }
