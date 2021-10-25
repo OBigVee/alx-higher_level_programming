@@ -8,26 +8,24 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """ Square Class info"""
 
-    def __init__(self, size, x=0, y=0, id=None):
+    def __init__(self,size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
         """ Note that a square height and width are equal"""
-        self.width = size
-        self.height = size
-        self.x = x
-        self.y = y
+        self.size = size
+        
 
     @property
-    def width(self):
+    def size(self):
         """acceser"""
-        return self.__width
+        return self.__size
 
-    @width.setter
-    def width(self, value):
+    @size.setter
+    def size(self, value):
 
-        """validate the the value for rectangle
+        """validate the the value for Square
                 height is positive interger
         Args:
-            value(Int): Square width
+            value(Int): Square width which is equal to it len
         """
 
         if type(value) != int:
@@ -35,25 +33,13 @@ class Square(Rectangle):
         elif value <= 0:
             raise ValueError("width must be > 0")
 
-        self.__width = value
+        self.__size = value
+        self.__width = self.__size
+        self.__height = self.__size
 
-    @property
-    def height(self):
-        return self.__height
 
-    @height.setter
-    def height(self, value):
-        """
-        validate the the value for Square height is positive interger
-        Args:
-            value(Int): Square height
-        """
-        if type(value) != int:
-            raise TypeError("height must be an integer")
-        elif value <= 0:
-            raise ValueError("height must be > 0")
 
-        self.__height = value
+
 
     @property
     def x(self):
@@ -75,7 +61,7 @@ class Square(Rectangle):
 
     @property
     def y(self):
-        """ """
+        """y-coordinate accesser """
         return self.__y
 
     @y.setter
@@ -100,20 +86,19 @@ class Square(Rectangle):
 
         for coor_y in range(self.__y):
             print()
-        for h_cm in range(self.__height):
+        for height_cm in range(self.__height):
             for coor_x in range(self.__x):
                 print(" ", end="")
-            for w_cm in range(self.__width):
+            for width_cm in range(self.__width):
                 print("#", end="")
             print()
 
        
     def __str__(self):
-        return ("[{}] ({}) {}/{} - {}/{}").format(
+        return ("[{}] ({}) {}/{} - {}").format(
             self.__class__.__name__,
             self.id,
             self.__x,
             self.__y,
-            self.__width,
-            self.__height,
-        )
+            self.__size,
+            )
