@@ -6,13 +6,12 @@ from rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """ Square Class info"""
+    """Square Class info"""
 
-    def __init__(self,size, x=0, y=0, id=None):
+    def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
         """ Note that a square height and width are equal"""
         self.size = size
-        
 
     @property
     def size(self):
@@ -37,10 +36,6 @@ class Square(Rectangle):
         self.__width = self.__size
         self.__height = self.__size
 
-
-
-
-
     @property
     def x(self):
         return self.__x
@@ -61,7 +56,7 @@ class Square(Rectangle):
 
     @property
     def y(self):
-        """y-coordinate accesser """
+        """y-coordinate accesser"""
         return self.__y
 
     @y.setter
@@ -92,7 +87,6 @@ class Square(Rectangle):
                 print("#", end="")
             print()
 
-       
     def __str__(self):
         return ("[{}] ({}) {}/{} - {}").format(
             self.__class__.__name__,
@@ -101,18 +95,16 @@ class Square(Rectangle):
             self.__y,
             self.__size,
         )
-    
+
     def update(self, *args, **kwargs):
-        """ assigns attributes """
-        if args: # not empty
+        """assigns attributes"""
+        if args:  # not empty
             for arg in range(len(args)):
-                
+
                 if arg == 0:
                     self.id = args[0]
                 elif arg == 1:
                     self.__size = args[1]
-                # elif arg == 2:
-                #     self.__height = args[2]
                 elif arg == 2:
                     self.__x = args[2]
                 elif arg == 3:
