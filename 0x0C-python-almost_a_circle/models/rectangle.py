@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ Rectangle class inherits from Base class"""
-from models.base import Base
+from base import Base
 
 
 class Rectangle(Base):
@@ -118,11 +118,11 @@ class Rectangle(Base):
         )
 
     def update(self, *args, **kwargs):
-        """ update  assigns  arguments to each attribute
-            @args: 
-                list of arguments
+        """update  assigns  arguments to each attribute
+        @args:
+            list of arguments
         """
-        if args: # args not empty
+        if args:  # args not empty
             for i in range(len(args)):
                 if i == 0:
                     self.id = args[0]
@@ -135,5 +135,16 @@ class Rectangle(Base):
                 elif i == 4:
                     self.__y = args[4]
         else:
-            for key,value in kwargs.items():
-                setattr(self,key,value)
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def to_dictionary(self):
+        """function returns the dictionary representation of Rectangle"""
+
+        return {
+            "id": self.id,
+            "width": self.__width,
+            "height": self.__height,
+            "x": self.__x,
+            "y": self.__y,
+        }
