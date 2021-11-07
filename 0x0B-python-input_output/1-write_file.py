@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""defining write_file with two arguments"""
+"""writes a string to a text file(UTF8) and returns the number of characters written"""
 
 
 def write_file(filename="", text=""):
-    """reads filename with utf-8"""
-    with open(filename, "w", encoding='utf-8') as f:
-        return f.write(text)
+    """read file"""
+    with open(filename, "w", encoding='utf-8') as file:
+        writeText2File = file.write(text)
+        return writeText2File
