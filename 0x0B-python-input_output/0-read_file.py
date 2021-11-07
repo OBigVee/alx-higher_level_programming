@@ -3,6 +3,6 @@
 
 def read_file(filename=""):
     """Args: filename """
-    with open(filename) as file:
+    with open(filename, mode='r', encoding='utf-8') as file:
         read_line = file.read()
-        return read_line
+        print (read_line)
