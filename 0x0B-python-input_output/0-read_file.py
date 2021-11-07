@@ -1,4 +1,4 @@
-#! /usr/bin/python3
+#!/usr/bin/python3
 """
     function that reads a text file UTF-8
     """
