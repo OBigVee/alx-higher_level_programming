@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ functions writes an object to a text file, using Json representation"""
 
-
+import json
 def save_to_json_file(my_obj, filename):
     """ 
       my_obj: primitive data type
@@ -9,5 +9,6 @@ def save_to_json_file(my_obj, filename):
     """
     with open (filename, "w") as file_obj:
         file = file_obj.write(my_obj)
-    return file
+        json_file = json.dumps(file)
+    return json_file
       
