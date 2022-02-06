@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """ Student class which defines a sudent by
     based on (9-student.py)
 """
