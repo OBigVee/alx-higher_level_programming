@@ -24,7 +24,8 @@ class Student:
             return dict
         else:
             return self.__dict__
+
     def reload_from_json(self, json):
-        """ replaces all the Student instance which mimick's the reloading of data from json """
+        """replaces all the Student instance which mimick's the reloading of data from json"""
         for (key, pair) in json.items():
             setattr(self, key, pair)
