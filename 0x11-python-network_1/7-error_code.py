@@ -10,5 +10,5 @@ r = requests.get(url)
 try:
     r.raise_for_status()
     print(r.text)
-except Exception as e:
+except requests.exceptions.HTTPError as e:
     print("Error code:{}".format(r.status_code))
