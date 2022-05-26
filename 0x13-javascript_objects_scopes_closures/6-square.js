@@ -1,12 +1,11 @@
 #!/usr/bin/node
-const square = require("./5-square");
+const square = require('./5-square')
 module.exports = class Square extends square {
+  constructor (size) {
+    super(size, size)
+  }
 
-    constructor(size) {
-        super(size, size);
-    }
-    charPrint(c) {
-        this.print(c);
-    }
-
+  charPrint (c) {
+    this.print(c)
+  }
 }
