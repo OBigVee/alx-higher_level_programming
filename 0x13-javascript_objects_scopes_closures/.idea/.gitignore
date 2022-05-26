@@ -1,5 +1,8 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+*.log
+*.idea
+*.pyc
 # Editor-based HTTP Client requests
 /httpRequests/
