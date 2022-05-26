@@ -1,9 +1,10 @@
 #!/usr/bin/node
-
-function nbOccurences(list) {
-    setList = new Set(list);
-    //console.log(setList);
-
+exports.nbOccurences = function (list, searchElement) {
+    let count = 0;
+    for(let i = 0; i < list.length; i++){
+        if (list[i] === searchElement){
+            count +=1;
+        }
+    }
+    return count;
 }
-
-nbOccurences([1, 3, 3, 4, 5, 6]);
