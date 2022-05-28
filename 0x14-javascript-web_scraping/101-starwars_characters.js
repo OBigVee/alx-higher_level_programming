@@ -14,21 +14,36 @@ if (process.argv.length > 2) {
     const episodeID = process.argv[2]
     request(`${url}${episodeID}`, function (error, response, body) {
         if (error) throw error
-        else if (body) {
-            const charURL = JSON.parse(body).characters;
-            //console.log(charURL);
-            const charName = charURL.map(
-                eachUrl => new Promise((resolve, reject)=>{
-                    request(eachUrl,function (err, response, body){
-                        if(err) throw reject(err);
-                        resolve(JSON.parse(body).name);
-                        //console.log(resolve(JSON.parse(body).name));
-                    });
-                }));
-            console.log(charName);
-            Promise.all(charName)
-                .then(names => console.log(names.join("\n")))
-                .then(error => console.log(error))
-        }
-    })
+        const charactersURL = JSON.parse(body).characters;
+        const charactersName = charactersURL.map(
+            url => new Promise((resolve, reject) => {
+                request(url, (err, res, body) => {
+                    if (err) {
+                        reject(err);
+                    }
+                    resolve(JSON.parse(body).name);
+                });
+            }));
+
+        Promise.all(charactersName)
+            .then(names => console.log(names.join('\n')))
+            .catch(err => console.log(err));
+    });
+    //     else if (body) {
+    //         const charURL = JSON.parse(body).characters;
+    //         //console.log(charURL);
+    //         const charName = charURL.map(
+    //             eachUrl => new Promise((resolve, reject)=>{
+    //                 request(eachUrl,function (err, response, body){
+    //                     if(err) throw reject(err);
+    //                     resolve(JSON.parse(body).name);
+    //                     //console.log(resolve(JSON.parse(body).name));
+    //                 });
+    //             }));
+    //         console.log(charName);
+    //         Promise.all(charName)
+    //             .then(names => console.log(names.join("\n")))
+    //             .then(error => console.log(error))
+    //     }
+    // })
 }
