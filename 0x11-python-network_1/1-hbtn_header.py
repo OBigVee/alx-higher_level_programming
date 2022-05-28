@@ -8,6 +8,6 @@ import sys
 
 if __name__ == "__main__":
     the_url = sys.argv[1]
-    with request.urlopen(the_url) as resp:
-        output = resp.info()
+    with request.urlopen(the_url) as response:
+        output = response.info()
         print(output["X-Requested-Id"])

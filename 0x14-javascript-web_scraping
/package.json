@@ -1,28 +1,21 @@
 {
-  "name": "0x14-javascript-web_scraping-",
-  "version": "1.0.0",
-  "description": "scrap web with js",
-  "main": " ",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/OBigVee/alx-higher_level_programming.git"
-  },
-  "keywords": [
-    "JS",
-    "web",
-    "scraping",
-    "API"
-  ],
-  "author": "Obigvee",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/OBigVee/alx-higher_level_programming/issues"
-  },
-  "homepage": "https://github.com/OBigVee/alx-higher_level_programming#readme",
-  "dependencies": {
-    "request": "^2.88.2"
-  }
+    "name": "0x14-javascript-web_scraping-",
+    "version": "1.0.0",
+    "description": "scrap web with js",
+    "main": " ",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+
+    "keywords": [
+        "JS",
+        "web",
+        "scraping",
+        "API"
+    ],
+    "author": "Obigvee",
+    "license": "ISC",
+    "dependencies": {
+        "request": "^2.88.2"
+    }
 }
