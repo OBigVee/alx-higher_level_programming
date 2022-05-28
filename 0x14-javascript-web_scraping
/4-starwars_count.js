@@ -21,6 +21,7 @@ if(process.argv.length > 2){
                 break;
             case error:
                 console.log(error);
+                break;
         }
     });
 }
