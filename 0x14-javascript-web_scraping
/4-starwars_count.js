@@ -12,16 +12,12 @@ if(process.argv.length > 2){
     const ID = 18;
     const url = process.argv[2]
     request(url,function (error, response, body){
-        switch (body) {
-            case body:
+            if(error) throw error
+            else if  (body){
                 const getCharacter = JSON.parse(body).results.filter(
                     i => i.characters.find(j => j.match(/\/people\/18\/?$/))
                 );
                 console.log(getCharacter.length);
-                break;
-            case error:
-                console.log(error);
-                break;
-        }
+            }
     });
 }
