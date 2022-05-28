@@ -7,17 +7,17 @@
  * -> you must use the module request
  */
 
-const request = require("request");
-if(process.argv.length > 2){
-    const ID = 18;
-    const url = process.argv[2]
-    request(url,function (error, response, body){
-            if(error) throw error
-            else if  (body){
-                const getCharacter = JSON.parse(body).results.filter(
-                    i => i.characters.find(j => j.match(/\/people\/18\/?$/))
-                );
-                console.log(getCharacter.length);
-            }
-    });
+const request = require('request')
+if (process.argv.length > 2) {
+  // const ID = 18
+  const url = process.argv[2]
+  request(url, function (error, response, body) {
+    if (error) throw error
+    else if (body) {
+      const getCharacter = JSON.parse(body).results.filter(
+        i => i.characters.find(j => j.match(/\/people\/18\/?$/))
+      )
+      console.log(getCharacter.length)
+    }
+  })
 }

@@ -7,19 +7,20 @@
  * -> You must use the module request
  */
 
-const request = require("request");
-const fs = require('fs');
+const request = require('request')
+const fs = require('fs')
 
-const encode = "utf-8";
+const encode = 'utf-8'
 
-if(process.argv.length > 3){
-    const url = process.argv[2];
-    const pathToStoreTo = process.argv[3];
-    request(url,function (error, response, body){
-        if(error) throw error;
-        else if (body) {
-            fs.writeFile(pathToStoreTo, body, encode, err => {
-                    if (err) throw err;
-                });}
-        })
+if (process.argv.length > 3) {
+  const url = process.argv[2]
+  const pathToStoreTo = process.argv[3]
+  request(url, function (error, response, body) {
+    if (error) throw error
+    else if (body) {
+      fs.writeFile(pathToStoreTo, body, encode, err => {
+        if (err) throw err
+      })
     }
+  })
+}
