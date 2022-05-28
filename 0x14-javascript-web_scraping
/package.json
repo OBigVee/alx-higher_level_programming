@@ -2,7 +2,7 @@
   "name": "0x14-javascript-web_scraping-",
   "version": "1.0.0",
   "description": "scrap web with js",
-  "main": "0-readme.js",
+  "main": " ",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
