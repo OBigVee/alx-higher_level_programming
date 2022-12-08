@@ -9,6 +9,6 @@ You are not allowed to import any module
 """
 for i in range(26):
     if ord("a") + i != 101 and ord("a") + i != 113:
-        print(f"{ord('a') + i:c}", end="")
+        print("{:c}".format(ord('a') + i), end="")
     else:
         continue
