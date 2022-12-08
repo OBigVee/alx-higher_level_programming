@@ -7,4 +7,4 @@ You can only use one loop in your code
 You are not allowed to store numbers or strings in a variable
 You are not allowed to import any module
 """
-[print(f"{i} = {hex(i)}") for i in range(99)]
+[print("{:d} = {}".format(i, hex(i))) for i in range(99)]
