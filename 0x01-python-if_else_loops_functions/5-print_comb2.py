@@ -9,8 +9,8 @@ You can only use one loop in your code
 You are not allowed to store numbers or strings in a variable
 You are not allowed to import any module
 """
-for i in range(99 + 1):
+for i in range(0, 99 + 1):
     if i == 99:
-        print("{}".format(i), end="")
+        print("{}".format(i))
     else:
         print("{:02}".format(i), end=", ")
