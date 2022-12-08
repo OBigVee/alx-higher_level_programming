@@ -2,12 +2,10 @@
 """
 function prints a string in uppercase followed by a new line
 """
-
-
 def uppercase(str):
-    for i in str:
-        if ord(i) >= 97 and ord(i) <= 122:
-            print("{}".format(chr(ord(i) - 32)), end="")
-        else:
-            print("{}".format(i), end="")
+    for i in range(len(str)):
+        uni_code = ord(str[i])
+        if (uni_code >= 97 and uni_code <= 122):
+            uni_code -= 32
+        print("{}".format(chr(uni_code)), end="")
     print()
