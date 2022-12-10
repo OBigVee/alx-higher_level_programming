@@ -4,7 +4,6 @@ if __name__ == "__main__":
     import sys
 
     n_arg = len(sys.argv) - 1
-    print(f"len = {n_arg}\n")
     print("{:d} argument{:s}{:s}".format(n_arg, "s" * (n_arg != 1),
         ":" if n_arg > 0 else "."))
     #if n_arg == 1:
