@@ -16,7 +16,7 @@ if __name__ == "__main__":
                 result = op[1](a, b)
                 print("{} {} {} = {}".format(a, op[0], b, result))
                 sys.exit()
-        print("Unknown operator. {:s}".format())
+        print("Unknown operator. {:s}".format(info))
         sys.exit(1)
     else:
         print("Usage: {} <a> <operator> <b>".format(sys.argv[0]))
