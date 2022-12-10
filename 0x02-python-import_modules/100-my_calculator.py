@@ -5,7 +5,7 @@ if __name__ == "__main__":
     from calculator_1 import add, sub, mul, div
 
     n_arg = len(sys.argv)
-
+    info = "Available operators: +, -, * and /"
     if n_arg == 4:
         a = int(sys.argv[1])
         b = int(sys.argv[3])
@@ -16,7 +16,7 @@ if __name__ == "__main__":
                 result = op[1](a, b)
                 print("{} {} {} = {}".format(a, op[0], b, result))
                 sys.exit()
-        print("Unknown operator. Available operators: {:s}".format("+, -, * and /"))
+        print("Unknown operator. {:s}".format())
         sys.exit(1)
     else:
         print("Usage: {} <a> <operator> <b>".format(sys.argv[0]))
