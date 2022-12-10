@@ -5,7 +5,8 @@ if __name__ == "__main__":
 
     n_arg = len(sys.argv) - 1
     print(f"len = {n_arg}\n")
-    print("{:d} argument{:s}{:s}".format(n_arg, "s" * (n_arg != 1), ":" if n_arg > 0 else "."))
+    print("{:d} argument{:s}{:s}".format(n_arg, "s" * (n_arg != 1),
+        ":" if n_arg > 0 else "."))
     #if n_arg == 1:
     #    print("{:d} arguments.".format(n_arg - 1))
     #elif n_arg == 2:
