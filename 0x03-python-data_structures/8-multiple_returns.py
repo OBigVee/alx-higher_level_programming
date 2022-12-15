@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-""" function returns a tuple with lenght of a string
-and its first character"""
-
-
 def multiple_returns(sentence):
+    """ function returns a tuple with lenght of a string
+    and its first character
+    """
     if sentence is None:
         return None
     else:
