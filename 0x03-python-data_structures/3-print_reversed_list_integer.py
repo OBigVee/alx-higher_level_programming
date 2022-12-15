@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-"""
-function prints all integer of a list, in reverse order
-"""
-
-
 def print_reversed_list_integer(my_list=[]):
-    n_arr = len(my_list)
-    for i in range(1, n_arr + 1):
-        print(my_list[-i])
+    '''
+    Prints the items of a list in a reversed order
+    Parameters:
+    my_list (list): The list of integers
+    '''
+    if my_list is not None:
+        last_idx = len(my_list) - 1
+        for i in range(last_idx + 1):
+            print('{:d}'.format(my_list[last_idx - i]))
