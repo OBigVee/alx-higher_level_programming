@@ -5,6 +5,4 @@ without using any loops
 
 
 def multiply_list_map(my_list=[], number=0):
-    if len(my_list) == None:
-        return None
     return list(map(lambda num: num * number, my_list))
