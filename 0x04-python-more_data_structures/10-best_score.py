@@ -3,12 +3,10 @@
 
 
 def best_score(a_dictionary):
-    if a_dictionary is None:
+    if a_dictionary is None or len(a_dictionary.keys()) == 0:
         return None
-    big_val = 0
-    big_key = ""
+    big_key, big_val = "", 0
     for key, val in a_dictionary.items():
         if val > big_val:
-            big_val = val
-            big_key = key
+            big_val, big_key = val, key
     return big_key
