@@ -12,4 +12,3 @@ def best_score(a_dictionary):
             big_val = val
             big_key = key
     return big_key
-
