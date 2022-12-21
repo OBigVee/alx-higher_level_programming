@@ -2,6 +2,8 @@
 """A module
 """
 
+
 class Square:
     """empty square class"""
+
     pass
