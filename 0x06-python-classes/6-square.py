@@ -58,13 +58,13 @@ class Square:
         Returns:
             int: the computed area
         """
-        return self.__size ** 2
+        return self.size ** 2
 
     def my_print(self):
         """ print a square based on the size given"""
-        if self.__size == 0:
+        if self.size == 0:
             print()
         else:
             print("{}".format("\n" * self.position[1]), end="")
-            for i in range(self.__size):
+            for i in range(self.size):
                 print("{}{}".format("" * self.position[0], "#" * self.size))
