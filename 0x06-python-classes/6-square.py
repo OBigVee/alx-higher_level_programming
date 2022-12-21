@@ -3,10 +3,10 @@
 
 
 class Square:
-    """Represents a 2D polygon with 4 side equal to each other
-    """
+    """Represents a 2D polygon with 4 side equal to each other"""
+
     def __init__(self, size=0, position=(0, 0)):
-        """ initialize Square with size
+        """initialize Square with size
         Args:
             size (int): the size of the square.
             position (tuple): The position of the square.
@@ -30,10 +30,10 @@ class Square:
             value (int): The new size of this Square.
         """
         if not isinstance(value, int):
-            raise TypeError('size must be an integer')
+            raise TypeError("size must be an integer")
         else:
             if value < 0:
-                raise ValueError('size must be >= 0')
+                raise ValueError("size must be >= 0")
             else:
                 self.__size = value
 
@@ -60,7 +60,7 @@ class Square:
         Returns:
             int: The area of  Square.
         """
-        return self.size ** 2
+        return self.size**2
 
     def my_print(self):
         """Prints a 2D table of the '#' symbol with the size of
