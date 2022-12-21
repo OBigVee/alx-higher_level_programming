@@ -7,9 +7,9 @@ class Square:
     """
     def __init__(self, size=0, position=(0, 0)):
         """ initialize Square with size
-
         Args:
             size (int): the size of the square.
+            position (tuple): The position of the square.
         """
         self.size = size
         self.position = position
@@ -24,19 +24,22 @@ class Square:
         return self.__position
 
     @size.setter
-    def size(self, size):
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
+    def size(self, value):
+        """Updates the size of this Square.
+        Args:
+            value (int): The new size of this Square.
+        """
+        if not isinstance(value, int):
+            raise TypeError('size must be an integer')
         else:
-            if size < 0:
-                raise ValueError("size must be >= 0")
+            if value < 0:
+                raise ValueError('size must be >= 0')
             else:
-                self.__size = size
+                self.__size = value
 
     @position.setter
     def position(self, value):
-        """Update the position of the square.
-
+        """Updates the position of this Square.
         Args:
             value (tuple): The new position of this Square.
         """
@@ -46,25 +49,26 @@ class Square:
             if len(value) == 2:
                 if isinstance(value[0], int) and isinstance(value[1], int):
                     if value[0] >= 0 and value[1] >= 0:
-                        not_valid = False
-        if not_valid:
+                        not_invalid = False
+        if not_invalid:
             raise TypeError(exception_mssg)
         else:
             self.__position = value
 
     def area(self):
-        """Computes the area of square.
-
+        """Computes the area of  Square.
         Returns:
-            int: the computed area
+            int: The area of  Square.
         """
         return self.size ** 2
 
     def my_print(self):
-        """ print a square based on the size given"""
+        """Prints a 2D table of the '#' symbol with the size of
+        this square based on its position.
+        """
         if self.size == 0:
-            print()
+            print("")
         else:
             print("{}".format("\n" * self.position[1]), end="")
             for i in range(self.size):
-                print("{}{}".format("" * self.position[0], "#" * self.size))
+                print("{}{}".format(" " * self.position[0], "#" * self.size))
