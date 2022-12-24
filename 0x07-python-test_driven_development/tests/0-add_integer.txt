@@ -4,7 +4,7 @@ How to use 0-add_integer.py
 
 This library contains a function that adds two integers. The values provided
 must be integers or floats, otherwise, TypeError exceptions will be thrown
-along with subsequent error messages.
+along with subsequent error messages
 
 	>>> add_integer = __import__("0-add_integer").add_integer
 
