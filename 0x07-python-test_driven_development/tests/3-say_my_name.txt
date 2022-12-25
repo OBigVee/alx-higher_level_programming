@@ -1,0 +1,30 @@
+==========================
+How 3-say_my_name.py works
+==========================
+
+This library contains a function ``say_my_name()``, it prints
+the ``first_name`` and ``last_name`` passed as input
+
+
+	>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+Documentation
+==============
+
+	>>> module_doc = __import__("3-say_my_name").__doc__
+	>>> print(len(module_doc) > 0)
+	True
+
+	>>> func_doc = __import__("3-say_my_name").say_my_name.__doc__
+	>>> print(len(func_doc) > 0)
+	True
+
+Basic
+==========
+If the arguments passed are strings, the operation should happen smoothly
+
+	>>> say_my_name("Tope", "yemi")
+	My name is Tope yemi
+
+	>>> say_my_name("Victor", "Adedeji")
+	My name is Victor Adedeji
