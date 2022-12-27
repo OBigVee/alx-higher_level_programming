@@ -1,0 +1,44 @@
+=========================
+How 5-text_indentation.py
+=========================
+This library contain a function ``text_indentation()``
+that prints a text with 2 new lines after each of any of the
+following characters .,?,:
+
+	>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+Documentation
+==============
+
+	>>> module_doc = __import__("5-text_indentation").__doc__
+	>>> print(len(module_doc) > 0)
+	True
+
+	>>> func_doc = __import__("5-text_indentation").text_indentation.__doc__
+	>>> print(len(func_doc) > 0)
+	True
+
+Basic
+=====
+If the argument ``text`` is a string, then the operation happen smoothly
+	>>> text = "Yes this is it. Were you going there? okay"
+	>>> text_indentation(text)
+	Yes this is it.
+	<BLANKLINE>
+	Were you going there?
+	<BLANKLINE>
+	okay
+	<BLANKLINE>
+
+ERRORS: If argument is not str
+========++++===================
+
+	>>> text = 6
+	>>> text_indentation(text)
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+	>>> text = ["Here we go. Are you fine?"]
+	>>> text_indentation(text)
+	Traceback (most recent call last):
+	TypeError: text must be a string
