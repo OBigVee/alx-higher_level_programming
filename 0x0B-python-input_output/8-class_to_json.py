@@ -7,6 +7,9 @@ def class_to_json(obj):
     for JSON serialization of an object.
 
     Args:
-        obj:
+        obj: initial object
     """
-    return obj.__dict__
+    if hasattr(obj, "__dict__"):
+        return obj.__dict__.copy()
+    return {}
+
