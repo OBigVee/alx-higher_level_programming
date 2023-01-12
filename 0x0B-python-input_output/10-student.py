@@ -15,15 +15,16 @@ class Student:
     def to_json(self, attrs=None):
         """method retrieves a dictionary rep of a Student instance
         (same as '8-class_to_json.py' file).
-        
+
         Agrs:
             attrs: attribute to be serialize
         """
-        if attrs is not None and all(isinstance(i,str)for i in attrs):
-            dict = {}
-            for k,v  in self.__dict__.items():
-                if k in attrs:
-                    dict[k] = v
-            return dict
+        if attrs is not None:
+            if all(isinstance(i, str) for i in attrs):
+                dict = {}
+                for k, v in self.__dict__.items():
+                    if k in attrs:
+                        dict[k] = v
+                return dict
         else:
-            return self.__dict__
+            return self.__dict__.copy()
