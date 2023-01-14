@@ -6,10 +6,9 @@
 
 def lookup(obj):
     """Args:
-        obj: object whose attributes and method to be return
-        
-        Returns:
-            list []
+    obj: object whose attributes and method to be return
+
+    Returns:
+        list []
     """
     return [attr for attr in dir(obj)]
-
