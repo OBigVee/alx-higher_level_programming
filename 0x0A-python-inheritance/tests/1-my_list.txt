@@ -1,0 +1,110 @@
+==============================
+How to use 1-my_list.py
+=============================
+
+This library contains a class MyList a derived class of list 
+with a method 'print_sorted'.
+'print_sorted': prints list  in ascending order
+
+	>>> MyList = __import__("1-my_list").MyList
+
+Documentation
+===============
+	
+	>>> module_doc = __import__("1-my_list").__doc__
+	>>> print(len(module_doc) > 0)
+	True
+
+	>>> class_doc = __import__("1-my_list").MyList.__doc__
+	>>> print(len(class_doc) > 0)
+	True
+
+	>>> func_doc = __import__("1-my_list").MyList.print_sorted.__doc__
+	>>> print(len(func_doc) > 0)
+	True
+
+
+	>>> sample = [10,100,300,1,0]
+	>>> func_test = __import__("1-my_list").MyList.print_sorted(sample)
+	>>> func_test
+	[0, 1, 10, 100, 300]
+	>>> print(len(func_test) > 0)
+	True
+
+Positve Integers
+=================
+```print_sorted()`` takes no argument. it prints a list in ascending form
+
+	>>> my_list = MyList()
+	>>> my_list.append(10)
+	>>> my_list.append(15)
+	>>> my_list.append(5)
+	>>> print(my_list)
+	[10, 15, 5]
+	>>> my_list.print_sorted()
+	[5, 10, 15]
+	>>> print(my_list)
+	[10, 15, 5]
+
+
+negative Integers
+=================
+```print_sorted()`` takes no argument. it prints a list in ascending form
+
+
+	>>> my_list = MyList()
+	>>> my_list.append(-10)
+	>>> my_list.append(-15)
+	>>> my_list.append(-5)
+	>>> print(my_list)
+	[-10, -15, -5]
+	>>> my_list.print_sorted()
+	[-15, -10, -5]
+	>>> print(my_list)
+	[-10, -15, -5]
+
+
+
+positive and negative Integers
+===============================
+```print_sorted()`` takes no argument. it prints a list in ascending form
+
+
+	>>> my_list = MyList()
+	>>> my_list.append(-10)
+	>>> my_list.append(-15)
+	>>> my_list.append(-5)
+	>>> my_list.append(100)
+	>>> my_list.append(20)
+	>>> print(my_list)
+	[-10, -15, -5, 100, 20]
+	>>> my_list.print_sorted()
+	[-15, -10, -5, 20, 100]
+	>>> print(my_list)
+	[-10, -15, -5, 100, 20]
+
+Empty List
+==========
+if list is empty
+	>>> my_list = MyList()
+	>>> print(my_list)
+	[]
+	>>> my_list.print_sorted()
+	[]
+	>>> print(my_list)
+	[]
+
+One element
+===========
+if the list contains one element
+
+	>>> my_list = MyList()
+	>>> my_list.append(2)
+	>>> print(my_list)
+	[2]
+	>>> my_list.print_sorted()
+	[2]
+	>>> print(my_list)
+	[2]
+
+	
