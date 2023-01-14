@@ -7,4 +7,4 @@ class MyList(list):
 
     def print_sorted(self):
         """method prints the list in ascending"""
-        return sorted(self)
+        print(sorted(self))
