@@ -24,12 +24,12 @@ Documentation
 	True
 
 
-	>>> sample = [10,100,300,1,0]
-	>>> func_test = __import__("1-my_list").MyList.print_sorted(sample)
-	>>> func_test
+	">>> sample = [10,100,300,1,0]
+	">>> func_test = __import__("1-my_list").MyList.print_sorted(sample)
+	">>> func_test
 	[0, 1, 10, 100, 300]
-	>>> print(len(func_test) > 0)
-	True
+	">>> print(len(func_test) > 0)
+	"True
 
 Positve Integers
 =================
