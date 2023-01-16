@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """function returns True, if the object is an instance of a class
-that inherited (directly or indirectly) from the specifed class; otherwise False.
+    that inherited (directly or indirectly) from the specifed class;
+    otherwise False.
 """
 
 
