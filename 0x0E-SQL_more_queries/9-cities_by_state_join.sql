@@ -1,2 +1,7 @@
 -- script lists all cities contained in db htbn_0d_usa
-SELECT * FROM cities INNER JOIN states ON cities.state_id = states.id ORDER BY cities.id ASC;
+
+SELECT c.id AS 'id', c.name AS 'name', s.name AS 'name'
+  FROM cities AS c
+       INNER JOIN states AS s
+       ON c.state_id = s.id
+ ORDER BY c.id ASC;
