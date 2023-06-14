@@ -7,7 +7,7 @@
 const values = parseInt(process.argv.slice(2));
 
 if (!isNaN(values)) {
-  console.log(`My number: ${Number(values)}`);
+  console.log(`My number: ${values}`);
 } else {
   console.log('Not a member');
 }
