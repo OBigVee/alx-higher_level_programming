@@ -9,22 +9,20 @@
     - Results must be displayed as they are in the example below
     - Your code should not be executed when imported
 """
-import sys
-import sqlalchemy
-import MySQLdb
-USERNAME = sys.argv[1]
-PASSWORD = sys.argv[2]
-DATABASE_NAME = sys.argv[3]
-PORT = 3306
-db = MySQLdb.connect(host="localhost", port=3306, user=USERNAME, passwd=PASSWORD, db=DATABASE_NAME)
-cur = db.cursor()
 
-cur.execute(f"SELECT * FROM {DATABASE_NAME}.states ORDER BY states.id ASC")
-for row in cur.fetchall():
-    print (row)
+if __name__ == "__main__":
+    import sys
+    import MySQLdb
 
+    USERNAME = sys.argv[1]
+    PASSWORD = sys.argv[2]
+    DATABASE_NAME = sys.argv[3]
+    PORT = 3306
+    db = MySQLdb.connect(
+        host="localhost", port=3306, user=USERNAME, passwd=PASSWORD, db=DATABASE_NAME
+    )
+    cur = db.cursor()
 
-
-
-
-
+    cur.execute(f"SELECT * FROM {DATABASE_NAME}.states ORDER BY states.id ASC")
+    for row in cur.fetchall():
+        print(row)
