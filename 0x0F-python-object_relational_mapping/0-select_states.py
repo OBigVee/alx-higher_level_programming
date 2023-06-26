@@ -20,6 +20,8 @@ db = MySQLdb.connect(host="localhost", port=3306, user=USERNAME, passwd=PASSWORD
 cur = db.cursor()
 
 cur.execute(f"SELECT * FROM {DATABASE_NAME}.states ORDER BY states.id ASC")
+for row in cur.fetchall():
+    print (row)
 
 
 
