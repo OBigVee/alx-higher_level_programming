@@ -13,7 +13,6 @@ if __name__ == "__main__":
     PASSWORD = sys.argv[2]
     DATABASE_NAME = sys.argv[3]
     NAME_SEARCHED = str(sys.argv[4])
-    print(NAME_SEARCHED)
     PORT = 3306
 
     db = MySQLdb.connect(
