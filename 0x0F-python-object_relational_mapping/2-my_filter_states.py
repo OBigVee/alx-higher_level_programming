@@ -22,9 +22,7 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     cur.execute(
-        f"SELECT * FROM {DATABASE_NAME}.states WHERE BINARY name = %s\
-                 ORDER BY states.id ASC",
-        (NAME_SEARCHED,),
-    )
+        "SELECT * FROM states WHERE BINARY name = '{}' \
+                ORDER BY states.id ASC".format(NAME_SEARCHED))
     for row in cur.fetchall():
         print(row)
