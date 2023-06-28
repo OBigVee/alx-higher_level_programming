@@ -33,18 +33,20 @@ database hbtn_0e_6_usa
 #     for row in session.query(State).all():
 #         print(f"{row.id}: {row.name}")
 #     session.close()
-if __name__ == '__main__':
+if __name__ == "__main__":
     import sys
     from model_state import Base, State
     from sqlalchemy import create_engine
     from sqlalchemy.orm import sessionmaker
 
     _, user, passwd, db = sys.argv
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(user,
-                           passwd, db), pool_pre_ping=True)
+    engine = create_engine(
+        "mysql+mysqldb://{}:{}@localhost/{}".format(user, passwd, db),
+        pool_pre_ping=True,
+    )
     Session = sessionmaker(bind=engine)
     session = Session()
 
     for state in session.query(State).all():
-        print('{}: {}'.format(state.id, state.name))
+        print("{}: {}".format(state.id, state.name))
     session.close()
