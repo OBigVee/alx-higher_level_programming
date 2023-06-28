@@ -4,29 +4,34 @@ script list all State objects from the
 database hbtn_0e_6_usa
 """
 
-import MySQLdb
-import sys
 
-from model_state import State, Base
 
 if __name__ == "__main__":
+
+    import sys
+    from sqlalchemy import create_engine
+    from sqlalchemy.orm import sessionmaker
+    from sqlalchemy import URL
+
+    from model_state import State, Base
 
     USERNAME = sys.argv[1]
     PASSWORD = sys.argv[2]
     DATABASE_NAME = sys.argv[3]
     PORT = 3306
 
-    db = MySQLdb.connect(
+    url_object = URL.create(
+        "mysql+mysqldb",
+        username="root",
+        password="thisme",
         host="localhost",
-        port=3306,
-        user=USERNAME,
-        passwd=PASSWORD,
-        db=DATABASE_NAME
+        database="hbtn_0e_6_usa",
     )
-    cur = db.cursor()
-    cur.execute(
-        f"SELECT * FROM {DATABASE_NAME}.states\
-              ORDER BY states.id ASC"
-    )
-    for row in cur.fetchall():
-        print(f"{row[0]}: {row[1]}")
+
+    engine = create_engine(url=url_object, pool_pre_ping=True)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    for row in session.query(State).all():
+        print(f"{row.id}: {row.name}")
+    session.close()
