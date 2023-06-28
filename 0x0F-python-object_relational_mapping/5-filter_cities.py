@@ -5,7 +5,7 @@ script lists all cities from db hbtn_0e-04_usa
 
 import sys
 import MySQLdb
-
+import pprint
 
 if __name__ == "__main__":
 
@@ -27,9 +27,13 @@ if __name__ == "__main__":
         WHERE states.name=%s ORDER BY cities.id ASC",
         (STATE_NAME,),
     )
+
+    list_cities = []
     for row in cur.fetchall():
-        for i in row:
-            print(f"{i}, ", end="")
-    print()
+        list_cities.append(row)
+    cities = [city[0] for city in list_cities]
+    output = ", ".join(cities)
+    print(output)
+
     cur.close()
     db.close()
