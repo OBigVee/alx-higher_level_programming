@@ -18,17 +18,17 @@ if __name__ == "__main__":
         )
         sys.exit(1)
 
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    database_name = sys.argv[3]
+    username = sys.argv[1]
+    password = sys.argv[2]
+    DBname = sys.argv[3]
 
     # Create the engine
     engine = create_engine(
-        f"mysql+mysqldb://{mysql_username}:{mysql_password}@localhost:3306/{database_name}"
+        f"mysql+mysqldb://{username}:{password}@localhost:3306/{DBname}"
     )
 
     # Bind the engine to the base class
-    #Base.metadata.bind = engine
+    Base.metadata.bind = engine
 
     # Create a session
     Session = sessionmaker(bind=engine)
