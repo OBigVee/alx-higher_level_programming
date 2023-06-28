@@ -24,12 +24,11 @@ if __name__ == "__main__":
 
     # Create the engine
     engine = create_engine(
-        f"mysql+mysqldb://{mysql_username}:{mysql_password}@localhost:3306/\
-                {database_name}"
+        f"mysql+mysqldb://{mysql_username}:{mysql_password}@localhost:3306/{database_name}"
     )
 
     # Bind the engine to the base class
-    Base.metadata.bind = engine
+    #Base.metadata.bind = engine
 
     # Create a session
     Session = sessionmaker(bind=engine)
