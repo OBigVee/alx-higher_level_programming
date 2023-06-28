@@ -28,6 +28,5 @@ if __name__ == "__main__":
         f"SELECT * FROM {DATABASE_NAME}.states\
               ORDER BY states.id ASC"
     )
-    
     for row in cur.fetchall():
         print(f"{row[0]}: {row[1]}")
