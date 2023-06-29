@@ -18,7 +18,7 @@ if __name__ == "__main__":
         f"mysql+mysqldb://{username}:{password}@localhost:3306/{DB}"
     )
 
-    Base.metadata.bind = engine
+    #Base.metadata.bind = engine
 
     Session = sessionmaker(bind=engine)
     session = Session()
