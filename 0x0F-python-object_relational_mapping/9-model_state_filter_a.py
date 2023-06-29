@@ -1,15 +1,13 @@
 #!/usr/bin/python3
 
-import sys
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy import create_engine
-from model_state import State, Base
+
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: python script.py <username> <password> <database>")
-        sys.exit(1)
-
+    import sys
+    from sqlalchemy.orm import sessionmaker
+    from sqlalchemy import create_engine
+    from model_state import State, Base
+    
     username = sys.argv[1]
     password = sys.argv[2]
     DB = sys.argv[3]
