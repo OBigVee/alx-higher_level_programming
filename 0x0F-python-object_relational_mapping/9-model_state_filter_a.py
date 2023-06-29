@@ -7,6 +7,7 @@ from model_state import State, Base
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
+        print("Usage: python script.py <username> <password> <database>")
         sys.exit(1)
 
     username = sys.argv[1]
@@ -22,7 +23,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states_a = session.query(State).filter(State.name.like("%a%")).all()
+    states_a = session.query(State).filter(State.name.like("%a%")).order_by(
+        State.id.asc()).all()
 
     if states_a:
         for state in states_a:
