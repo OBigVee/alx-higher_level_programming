@@ -1,6 +1,9 @@
 #!/usr/bin/python3
+"""Lists all State objects that contain the letter a
+from the database hbtn_0e_6_usa
 """
-"""
+
+
 if __name__ == "__main__":
     import sys
     from sqlalchemy.orm import sessionmaker
@@ -14,7 +17,6 @@ if __name__ == "__main__":
     engine = create_engine(
         f"mysql+mysqldb://{username}:{password}@localhost:3306/{DB}"
     )
-
     Session = sessionmaker(bind=engine)
     session = Session()
 
