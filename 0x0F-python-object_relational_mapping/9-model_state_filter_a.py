@@ -13,7 +13,7 @@ if __name__ == "__main__":
     # username = sys.argv[1]
     # password = sys.argv[2]
     # DB = sys.argv[3]
-    _,username, password, DB = sys.argv
+    _, username, password, DB = sys.argv
     engine = create_engine(
         f"mysql+mysqldb://{username}:{password}@localhost:3306/{DB}"
     )
