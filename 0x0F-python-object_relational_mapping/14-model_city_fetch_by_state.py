@@ -12,10 +12,8 @@ if __name__ == "__main__":
     from sqlalchemy import create_engine, asc
 
     _, username, passwd, db = sys.argv
-
     url = f"mysql+mysqldb://{username}:{passwd}@localhost:3306/{db}"
     engine = create_engine(url)
-
     Session = sessionmaker(bind=engine)
     session = Session()
 
