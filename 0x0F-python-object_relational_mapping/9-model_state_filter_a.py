@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 
-
-
 if __name__ == "__main__":
     import sys
     from sqlalchemy.orm import sessionmaker
@@ -21,11 +19,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states_a = session.query(State).filter(State.name.like("%a%")).order_by(
-        State.id.asc()).all()
+    # states_a = session.query(State).filter(State.name.like("%a%")).order_by(
+    #     State.id.asc()).all()
 
     #if states_a:
-    for state in states_a:
+    for state in session.query(State).filter(State.name.like("%a%")):
         print(f"{state.id}: {state.name}")
     # else:
     #     print("Nothing")
