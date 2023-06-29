@@ -10,10 +10,10 @@ if __name__ == "__main__":
     from sqlalchemy import create_engine
     from model_state import State, Base
 
-    username = sys.argv[1]
-    password = sys.argv[2]
-    DB = sys.argv[3]
-
+    # username = sys.argv[1]
+    # password = sys.argv[2]
+    # DB = sys.argv[3]
+    _,username, password, DB = sys.argv
     engine = create_engine(
         f"mysql+mysqldb://{username}:{password}@localhost:3306/{DB}"
     )
