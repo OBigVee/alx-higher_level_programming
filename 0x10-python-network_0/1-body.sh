@@ -1,2 +1,2 @@
 #!/bin/bash 
-curl -location "$1"
+curl -s -location "$1"
