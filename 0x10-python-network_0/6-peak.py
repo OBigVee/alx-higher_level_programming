@@ -31,3 +31,4 @@ def find_peak(list_of_integers):
         ):
             peak = list_of_integers[i]
             return peak
+    return None
