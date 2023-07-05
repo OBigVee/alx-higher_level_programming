@@ -23,8 +23,7 @@ def find_peak(list_of_integers):
     #     peak = list_of_integers[n - 1]
     #     return peak
 
-
-    # # iterate through the rest of list_of_integer
+    # iterate through the rest of list_of_integer
     # for i in range(1, n - 1):
     #     if (
     #         list_of_integers[i] >= list_of_integers[i - 1]
