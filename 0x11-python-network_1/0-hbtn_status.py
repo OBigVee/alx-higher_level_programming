@@ -2,7 +2,7 @@
 """python script fetches url"""
 
 if __name__ == "__main__":
-    import urllib.request
+    import urllib
 
     url = "https://alx-intranet.hbtn.io/status"
     req = urllib.request.Request(url)
