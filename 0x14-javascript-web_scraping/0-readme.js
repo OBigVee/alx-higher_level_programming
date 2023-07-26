@@ -9,12 +9,12 @@
 const fs = require('fs');
 
 if (process.argv.length > 2) {
-  fs.readFile(process.argv[2]),
-  (error, data) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(data.toString('utf-8'));
-    }
-  };
+    fs.readFile(process.argv[2],
+        (error, data) => {
+            if (error) {
+                console.log(error).message;
+            } else {
+                console.log(data.toString('utf-8'));
+            }
+        });
 }
