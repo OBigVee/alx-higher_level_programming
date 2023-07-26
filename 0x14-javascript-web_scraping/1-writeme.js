@@ -8,16 +8,13 @@
 const fs = require('fs');
 const { encode } = require('punycode');
 
-if (process.argv < 3) {
+if (process.argv != 4) {
     process.exit();
 }
-file = process.argv[2];
-data = process.argv[3];
+const [path, data] = process.argv.slice(2);
 
-fs.writeFile(file, data, (err) => {
+fs.writeFile(path, data, (err) => {
     if (err) {
         console.log(err);
-    } else {
-        console.log(fs.readFileSync(file, 'utf-8'))
     }
 })
