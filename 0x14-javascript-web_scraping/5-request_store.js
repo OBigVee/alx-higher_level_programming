@@ -17,10 +17,25 @@ request(url, function(err, resp, body) {
         console.log(err);
         process.exit();
     }
-    const data = JSON.parse(body);
-    fs.writeFileSync(path, data, (err) => {
-        if (err) {
-            console.log(err);
+    // check if the response content type is json
+    const contentType = resp.headers['content-type'];
+    if (contentType || !contentType.includes('application/json')) {
+        console.log("response is not json");
+        fs.writeFileSync(path, body, (err) => {
+            if (err) {
+                console.log(err);
+            }
+        });
+    } else {
+        try {
+            const data = JSON.parse(body);
+            fs.writeFileSync(path, data, (err) => {
+                if (err) {
+                    console.log(err);
+                }
+            });
+        } catch (parseErr) {
+            console.log("Error parsing JSON:", parseErr);
         }
-    });
+    }
 });
