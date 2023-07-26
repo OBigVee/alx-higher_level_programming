@@ -1,19 +1,14 @@
 #!/usr/bin/node
 
-/**
- * script displays the status code of a GET request
- */
-
 const request = require('request');
 
 if (process.argv.length !== 3) {
     process.exit();
 }
 
-url = process.argv[2];
-request(url, function(err, res, body) {
-    if (err) {
-        console.log(err);
+request(process.argv[2], function(error, response, body) {
+    if (error) {
+        console.log(error);
     }
-    console.log(`code:${res.statusCode}`);
+    console.log(`code: ${response.statusCode}`);
 });
