@@ -1,5 +1,9 @@
 #!/usr/bin/node
 
+/**
+ * script
+ */
+
 const request = require('request');
 
 if (process.argv.length !== 3) {
