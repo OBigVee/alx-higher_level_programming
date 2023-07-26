@@ -12,7 +12,7 @@ if (process.argv.length > 2) {
     fs.readFile(process.argv[2],
         (error, data) => {
             if (error) {
-                console.log(error).message;
+                console.log(error);
             } else {
                 console.log(data.toString('utf-8'));
             }
