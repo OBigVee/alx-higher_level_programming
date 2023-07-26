@@ -11,9 +11,9 @@ if (process.argv.length !== 3) {
 }
 
 url = process.argv[2];
-request(url, (err, response, r) => {
+request(url, function(err, response, r) {
     if (err) {
         console.log(err);
     }
-    console.log(`code:${r.statusCode}`)
-})
+    console.log(`code:${r.statusCode}`);
+});
