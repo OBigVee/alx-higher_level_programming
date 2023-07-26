@@ -6,11 +6,14 @@
 
 const request = require('request');
 
-if (process.argv.length < 3) {
+if (process.argv.length !== 3) {
     process.exit();
 }
 
 url = process.argv[2];
-request.get(url).on('response', r => {
+request(url, (err, response, r) => {
+    if (err) {
+        console.log(err);
+    }
     console.log(`code:${r.statusCode}`)
 })
