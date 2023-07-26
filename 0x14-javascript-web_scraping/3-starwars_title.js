@@ -15,6 +15,6 @@ request(url, (err, r, body) => {
     if (err) {
         console.log(err);
     } else {
-        console.log(JSON.parser(body).title);
+        console.log(JSON.parse(body).title);
     }
 })
