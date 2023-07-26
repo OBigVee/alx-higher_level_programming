@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/node
 
 /**
  * Script prints the title of a Star Wars movie where the 
