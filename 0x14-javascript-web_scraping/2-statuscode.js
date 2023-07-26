@@ -9,10 +9,10 @@ const request = require('request');
 if (process.argv.length !== 3) {
     process.exit();
 }
-
-request(process.argv[2], function(error, response, body) {
+url = process.argv[2];
+request(url, function(error, res, body) {
     if (error) {
         console.log(error);
     }
-    console.log(`code: ${response.statusCode}`);
+    console.log(`code: ${res.statusCode}`);
 });
