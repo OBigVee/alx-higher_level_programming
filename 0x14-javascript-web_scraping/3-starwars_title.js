@@ -11,7 +11,7 @@ if (process.argv.length < 2) {
 }
 id = process.argv[2];
 url = `https://swapi-api.alx-tools.com/api/films/:${id}`;
-request.get(url), (err, r, body => {
+request.get(url, err, r, body => {
     if (err) {
         console.log(err);
     } else {
