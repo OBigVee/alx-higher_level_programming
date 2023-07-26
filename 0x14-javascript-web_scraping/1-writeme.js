@@ -6,7 +6,6 @@
  */
 
 const fs = require('fs');
-const { encode } = require('punycode');
 
 if (process.argv != 4) {
     process.exit();
