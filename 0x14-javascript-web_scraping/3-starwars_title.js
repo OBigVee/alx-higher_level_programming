@@ -6,11 +6,15 @@
  */
 
 const request = require('request');
-if (process.argv < 2) {
+if (process.argv.length < 2) {
     process.exit();
 }
 id = process.argv[2];
 url = `https://swapi-api.alx-tools.com/api/films/:${id}`;
-request.get(url).on('response ', r => {
-    console.log(r.title);
+request.get(url), (err, r, body => {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log(JSON.parser(body).title);
+    }
 })
