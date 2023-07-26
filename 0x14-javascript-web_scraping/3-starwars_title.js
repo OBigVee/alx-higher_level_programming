@@ -10,8 +10,8 @@ const request = require('request');
 if (process.argv.length !== 3) {
     process.exit();
 }
-id = process.argv[2];
-url = `https://swapi-api.alx-tools.com/api/films/${id}/`;
+const id = process.argv[2];
+const url = `https://swapi-api.alx-tools.com/api/films/${id}/`;
 request(url, function(err, r, body) {
     if (err) {
         console.log(err);
