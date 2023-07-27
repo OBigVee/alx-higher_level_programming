@@ -8,7 +8,7 @@ const request = require('request');
 const fs = require('fs');
 
 if (process.argv.length !== 4) {
-  process.exit();
+    process.exit();
 }
 const [url, path] = process.argv.slice(2);
 
@@ -31,4 +31,4 @@ const [url, path] = process.argv.slice(2);
 //     }
 
 // });
-request(url).pipe(fs.createReadStream(path));
+request(url).pipe(fs.createWriteStream(path));
