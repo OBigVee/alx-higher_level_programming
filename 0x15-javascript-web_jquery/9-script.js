@@ -1,8 +1,12 @@
 'use strict';
 const url = 'https://fourtonfish.com/hellosalut/?lang=fr';
-
 $(()=>{
-    $.get(url, (body)=>{
-        $('div#hello').html(body.hello);
+    const view = $('div#hello');
+    $.ajax({
+        url:url,
+        method:'GET',
+        sucess: (data)=>{
+            view.text(data.hello);
+        }
     });
 });
