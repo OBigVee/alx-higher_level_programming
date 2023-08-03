@@ -5,7 +5,7 @@ $(()=>{
     $.ajax({
         url:url,
         method:'GET',
-        sucess: (data)=>{
+        success: (data)=>{
             view.text(data.hello);
         }
     });
